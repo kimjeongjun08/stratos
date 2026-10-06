@@ -2,11 +2,12 @@
   "name": "STRATOS — AI-native edge cloud",
   "short_name": "STRATOS",
   "description": "The cloud that thinks at the edge.",
-  "start_url": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#05060a",
   "theme_color": "#05060a",
   "icons": [
-    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

@@ -177,9 +177,9 @@ function initPresence() {
 async function initGlobes() {
   let regions = [];
   try {
-    regions = (await fetch('/api/regions').then((r) => r.json())).regions;
+    regions = (await fetch('api/regions').then((r) => r.json())).regions;
   } catch {
-    try { regions = (await fetch('/data/regions.json').then((r) => r.json())).regions; } catch { regions = []; }
+    try { regions = (await fetch('data/regions.json').then((r) => r.json())).regions; } catch { regions = []; }
   }
 
   // populate waitlist region <select>
@@ -240,7 +240,7 @@ async function initQuotes() {
   const track = $('[data-quotes]');
   if (!track) return;
   let quotes = [];
-  try { quotes = await fetch('/data/testimonials.json').then((r) => r.json()); } catch { return; }
+  try { quotes = await fetch('data/testimonials.json').then((r) => r.json()); } catch { return; }
   track.innerHTML = quotes.map((q) => `
     <figure class="quote">
       <blockquote class="quote__text">“${q.text}”</blockquote>
@@ -260,7 +260,7 @@ function initWaitlist() {
   const submitLabel = $('[data-submit-label]');
 
   // seed count from /api/stats
-  fetch('/api/stats').then((r) => r.json()).then((s) => {
+  fetch('api/stats').then((r) => r.json()).then((s) => {
     if (countEl) countEl.textContent = nf.format(s.waitlist ?? 0);
   }).catch(() => { if (countEl) countEl.textContent = '2,800+'; });
 
@@ -278,7 +278,7 @@ function initWaitlist() {
     }
     if (submitLabel) submitLabel.textContent = 'Joining…';
     try {
-      const res = await fetch('/api/waitlist', {
+      const res = await fetch('api/waitlist', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ email: data.email, company: data.company, region: data.region }),
@@ -376,7 +376,7 @@ async function boot() {
 
   // register service worker (progressive enhancement)
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   }
 }
 

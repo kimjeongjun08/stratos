@@ -10,7 +10,7 @@ export async function initPricing(root) {
   if (!root) return;
   let cfg;
   try {
-    cfg = await fetch('/data/pricing.json').then((r) => r.json());
+    cfg = await fetch('data/pricing.json').then((r) => r.json());
   } catch {
     cfg = { unit: { requestsPerMillion: 0.18, cpuMsPerMillion: 0.0000021, gpuMultiplier: 7.5, egressPerTB: 24, basePlatform: 0 }, legacyMultiplier: 2.9 };
   }

@@ -1,0 +1,11 @@
+# One-click deploy to Render (https://render.com) — Blueprint.
+# In Render: New + → Blueprint → connect this repo. Render reads this file.
+services:
+  - type: web
+    name: stratos
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    # Render provides $PORT automatically; the server honors it.

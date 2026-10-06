@@ -2,17 +2,19 @@
 // Caches the static shell; always lets API + WebSocket traffic hit the network.
 
 const CACHE = 'stratos-v1';
+// Relative so the site works both at the server root (Node) and under a
+// project subpath (GitHub Pages, e.g. /stratos/). Resolved against the SW scope.
 const SHELL = [
-  '/',
-  '/index.html',
-  '/styles/reset.css',
-  '/styles/variables.css',
-  '/styles/main.css',
-  '/styles/animations.css',
-  '/styles/responsive.css',
-  '/scripts/main.mjs',
-  '/assets/favicon.svg',
-  '/manifest.webmanifest',
+  './',
+  'index.html',
+  'styles/reset.css',
+  'styles/variables.css',
+  'styles/main.css',
+  'styles/animations.css',
+  'styles/responsive.css',
+  'scripts/main.mjs',
+  'assets/favicon.svg',
+  'manifest.webmanifest',
 ];
 
 self.addEventListener('install', (e) => {

@@ -14,9 +14,9 @@ let shaderCache = null;
 async function loadShaders() {
   if (shaderCache) return shaderCache;
   const [vert, frag, atmo] = await Promise.all([
-    fetch('/shaders/globe.vert.glsl').then((r) => r.text()),
-    fetch('/shaders/globe.frag.glsl').then((r) => r.text()),
-    fetch('/shaders/atmosphere.frag.glsl').then((r) => r.text()),
+    fetch('shaders/globe.vert.glsl').then((r) => r.text()),
+    fetch('shaders/globe.frag.glsl').then((r) => r.text()),
+    fetch('shaders/atmosphere.frag.glsl').then((r) => r.text()),
   ]);
   shaderCache = { vert, frag, atmo };
   return shaderCache;

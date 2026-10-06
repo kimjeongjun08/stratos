@@ -103,10 +103,35 @@ WebSocket framing, the telemetry fan-out, and the globe shader.
 
 ## Deploying
 
-- **Full stack (recommended):** any host that runs Node 22.5+ — `npm start`
-  behind a reverse proxy. WebSockets and SQLite work out of the box.
-- **Static only (GitHub Pages):** publish the `public/` directory. The live
-  features fall back to the in-browser simulator automatically.
+### Static — GitHub Pages (zero config)
+
+A workflow at `.github/workflows/pages.yml` publishes `public/` to Pages on
+every push to `main`. Once the repo's Pages source is set to **GitHub Actions**
+(Settings → Pages → Source), the site goes live at:
+
+```
+https://<user>.github.io/stratos/
+```
+
+All asset paths are relative, so the site works correctly from the `/stratos/`
+subpath. The Node backend does not run on Pages — the frontend detects this and
+falls back to its in-browser simulator, so live metrics, presence and the
+waitlist still behave (in demo mode).
+
+### Full stack — Render / Railway / Fly / Docker
+
+For the real WebSocket + SQLite experience, deploy the included `Dockerfile`
+(Node 24, zero dependencies):
+
+- **Render:** New + → Blueprint → pick this repo. It reads [`render.yaml`](render.yaml)
+  and deploys the container with a `/api/health` health check.
+- **Railway / Fly.io:** both auto-detect the `Dockerfile`.
+- **Any Node 22.5+ host:** `node server/index.mjs` (see [`Procfile`](Procfile) /
+  [`.nvmrc`](.nvmrc)). The host's `$PORT` is honored automatically.
+- **Local Docker:** `docker build -t stratos . && docker run -p 4173:4173 stratos`
+
+> On free tiers the container filesystem is ephemeral, so the SQLite file resets
+> on redeploy — fine for a demo. Mount a volume at `server/data` for durability.
 
 ## License
 

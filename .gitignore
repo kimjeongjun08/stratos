@@ -1,0 +1,20 @@
+# dependencies (we ship zero, but just in case)
+node_modules/
+
+# runtime database + wal/shm sidecars
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+server/data/
+
+# env
+.env
+.env.local
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

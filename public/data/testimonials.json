@@ -1,0 +1,32 @@
+[
+  {
+    "text": "We cut p99 from 240ms to 11ms worldwide in an afternoon. Our ops rotation basically disappeared.",
+    "name": "Mara Velez",
+    "role": "VP Engineering, Driftwave",
+    "initials": "MV"
+  },
+  {
+    "text": "The scale-to-zero billing is almost unfair. We run 400 microservices and pay for the ten that are actually busy.",
+    "name": "Jonas Pike",
+    "role": "CTO, Clearloop",
+    "initials": "JP"
+  },
+  {
+    "text": "Weight-streaming cold starts under 200ms changed what we thought was possible for real-time inference at the edge.",
+    "name": "Aiko Tanaka",
+    "role": "Head of ML, Ionic AI",
+    "initials": "AT"
+  },
+  {
+    "text": "One git push, live in twelve regions, mTLS everywhere. It feels like cheating compared to our old Kubernetes estate.",
+    "name": "Dmitri Olsen",
+    "role": "Principal SRE, Northwind",
+    "initials": "DO"
+  },
+  {
+    "text": "The live observability firehose is the same tech on their marketing page — and yes, it's genuinely that fast.",
+    "name": "Priya Raman",
+    "role": "Staff Engineer, Aperture",
+    "initials": "PR"
+  }
+]

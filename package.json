@@ -1,0 +1,26 @@
+{
+  "name": "ori-cloud",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ORI — the AI-native global edge cloud. A zero-dependency full-stack showcase: hand-rolled WebSocket server, built-in SQLite, WebGL globe, procedural audio.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "dev": "node --watch server/index.mjs",
+    "db:reset": "node server/db.mjs --reset"
+  },
+  "keywords": [
+    "cloud",
+    "edge",
+    "webgl",
+    "websocket",
+    "sqlite",
+    "zero-dependency",
+    "landing-page"
+  ],
+  "author": "ORI",
+  "license": "MIT"
+}

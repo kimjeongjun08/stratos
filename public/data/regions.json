@@ -1,0 +1,17 @@
+{
+  "_comment": "Static fallback used only if GET /api/regions is unavailable (e.g. on GitHub Pages without the Node backend).",
+  "regions": [
+    { "code": "iad", "name": "US East · Virginia", "lat": 38.95, "lon": -77.45, "tier": "core", "status": "operational" },
+    { "code": "sfo", "name": "US West · California", "lat": 37.62, "lon": -122.37, "tier": "core", "status": "operational" },
+    { "code": "lhr", "name": "Europe · London", "lat": 51.47, "lon": -0.45, "tier": "core", "status": "operational" },
+    { "code": "fra", "name": "Europe · Frankfurt", "lat": 50.03, "lon": 8.57, "tier": "core", "status": "operational" },
+    { "code": "nrt", "name": "Asia · Tokyo", "lat": 35.55, "lon": 139.78, "tier": "core", "status": "operational" },
+    { "code": "sin", "name": "Asia · Singapore", "lat": 1.36, "lon": 103.99, "tier": "core", "status": "operational" },
+    { "code": "syd", "name": "Oceania · Sydney", "lat": -33.95, "lon": 151.18, "tier": "edge", "status": "operational" },
+    { "code": "gru", "name": "South America · São Paulo", "lat": -23.43, "lon": -46.47, "tier": "edge", "status": "operational" },
+    { "code": "bom", "name": "Asia · Mumbai", "lat": 19.09, "lon": 72.87, "tier": "edge", "status": "operational" },
+    { "code": "cpt", "name": "Africa · Cape Town", "lat": -33.97, "lon": 18.60, "tier": "edge", "status": "operational" },
+    { "code": "icn", "name": "Asia · Seoul", "lat": 37.46, "lon": 126.44, "tier": "core", "status": "operational" },
+    { "code": "yyz", "name": "Canada · Toronto", "lat": 43.68, "lon": -79.63, "tier": "edge", "status": "operational" }
+  ]
+}

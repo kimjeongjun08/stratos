@@ -1,0 +1,52 @@
+/* ORI — design tokens */
+:root {
+  /* palette */
+  --bg:          #05060a;
+  --bg-2:        #080a12;
+  --surface:     #0b0e18;
+  --surface-2:   #11152233;
+  --line:        #1b2130;
+  --line-soft:   #141a28;
+
+  --cyan:        #38e8ff;
+  --cyan-deep:   #11a8c9;
+  --violet:      #8b7bff;
+  --violet-deep: #5b4bd6;
+  --green:       #5bffab;
+  --amber:       #ffcf6b;
+
+  --text:        #eef2fb;
+  --text-dim:    #aeb6c9;
+  --text-mute:   #6b7489;
+
+  /* gradients */
+  --grad-brand:  linear-gradient(120deg, var(--cyan), var(--violet));
+  --grad-text:   linear-gradient(120deg, #eafcff 0%, var(--cyan) 45%, var(--violet) 100%);
+  --glow-cyan:   0 0 40px color-mix(in srgb, var(--cyan) 45%, transparent);
+
+  /* type */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* scale (fluid) */
+  --step--1: clamp(0.82rem, 0.78rem + 0.2vw, 0.95rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  --step-1:  clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
+  --step-2:  clamp(1.8rem, 1.4rem + 2vw, 2.8rem);
+  --step-3:  clamp(2.6rem, 1.8rem + 4vw, 5rem);
+  --step-4:  clamp(3.2rem, 2rem + 6vw, 7.5rem);
+
+  /* layout */
+  --maxw:    1200px;
+  --gutter:  clamp(1.25rem, 5vw, 5rem);
+  --radius:  18px;
+  --radius-sm: 10px;
+
+  /* motion */
+  --ease:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur:     0.6s;
+
+  color-scheme: dark;
+}

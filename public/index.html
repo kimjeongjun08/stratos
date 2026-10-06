@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ORI — The AI-native edge cloud</title>
+  <meta name="description" content="ORI runs your workloads microseconds from every user. AI-native compute across a self-healing global edge, with zero-ops autoscaling and real-time observability." />
+  <meta name="theme-color" content="#05060a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ORI — The AI-native edge cloud" />
+  <meta property="og:description" content="Deploy once. Run everywhere. Microseconds from every user." />
+  <meta property="og:image" content="/assets/og.svg" />
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles (split across multiple files on purpose) -->
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/variables.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/animations.css" />
+  <link rel="stylesheet" href="/styles/responsive.css" />
+
+  <!-- Three.js + GSAP via ESM import map (no build step) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ░░ Preloader ░░ -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <svg viewBox="0 0 120 120" width="88" height="88" aria-hidden="true">
+        <polygon class="preloader__tri" points="60,14 106,96 14,96" />
+      </svg>
+    </div>
+    <div class="preloader__label">
+      <span data-boot>INITIALIZING CONTROL PLANE</span>
+      <span class="preloader__pct" data-pct>0%</span>
+    </div>
+    <div class="preloader__bar"><i data-barfill></i></div>
+  </div>
+
+  <!-- scroll progress rail -->
+  <div class="scroll-rail" aria-hidden="true"><i data-scrollfill></i></div>
+
+  <!-- custom cursor + remote cursors mount -->
+  <div class="cursor" data-cursor aria-hidden="true"></div>
+  <div class="cursor-dot" data-cursor-dot aria-hidden="true"></div>
+  <div id="remote-cursors" aria-hidden="true"></div>
+
+  <!-- ░░ Navigation ░░ -->
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="ORI home">
+      <svg class="nav__logo" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+        <polygon points="16,3 29,27 3,27" />
+      </svg>
+      <span>ORI</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#network">Network</a>
+      <a href="#deploy">Deploy</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav__actions">
+      <span class="live-pill" data-live-pill title="Visitors on this page right now">
+        <i class="live-pill__dot"></i><b data-live-count>1</b> live
+      </span>
+      <button class="sound-toggle" data-sound-toggle aria-pressed="false" aria-label="Toggle ambient sound">
+        <span class="sound-toggle__bars"><i></i><i></i><i></i><i></i></span>
+        <span data-sound-label>Sound</span>
+      </button>
+      <a class="btn btn--ghost" href="#waitlist">Sign in</a>
+      <a class="btn btn--primary" href="#waitlist" data-magnetic>Request access</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ░░ Hero ░░ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" data-globe aria-hidden="true"></canvas>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow" data-reveal>
+          <i class="pulse"></i> Now in private beta · 12 regions online
+        </p>
+        <h1 class="hero__title" data-split>
+          The cloud that thinks<br />at the <em>edge.</em>
+        </h1>
+        <p class="hero__sub" data-reveal>
+          ORI places AI-native compute microseconds from every user — a
+          self-healing global mesh that scales from zero to planet-scale without
+          a single line of ops.
+        </p>
+        <div class="hero__cta" data-reveal>
+          <a class="btn btn--primary btn--lg" href="#waitlist" data-magnetic data-sfx="confirm">
+            Request early access
+          </a>
+          <a class="btn btn--line btn--lg" href="#deploy" data-sfx="hover">
+            Watch a deploy ↗
+          </a>
+        </div>
+
+        <!-- live hero ticker -->
+        <dl class="hero__ticker" data-reveal>
+          <div><dt>Requests / sec</dt><dd data-metric="rps">—</dd></div>
+          <div><dt>p99 latency</dt><dd data-metric="p99">—</dd></div>
+          <div><dt>Edge nodes</dt><dd data-metric="edge">—</dd></div>
+        </dl>
+      </div>
+
+      <a class="hero__scrollcue" href="#trust" aria-label="Scroll">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ░░ Trust marquee ░░ -->
+    <section class="trust" id="trust" aria-label="Trusted by">
+      <p class="trust__kicker">Powering the teams redefining their category</p>
+      <div class="marquee" data-marquee>
+        <div class="marquee__track">
+          <span>NEBULA</span><span>Quanta</span><span>HELIOS</span><span>Vectorform</span>
+          <span>Northwind</span><span>Aperture</span><span>Mono&nbsp;Labs</span><span>Driftwave</span>
+          <span>Clearloop</span><span>Ionic&nbsp;AI</span>
+          <!-- duplicated for seamless loop -->
+          <span>NEBULA</span><span>Quanta</span><span>HELIOS</span><span>Vectorform</span>
+          <span>Northwind</span><span>Aperture</span><span>Mono&nbsp;Labs</span><span>Driftwave</span>
+          <span>Clearloop</span><span>Ionic&nbsp;AI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ Live metrics band ░░ -->
+    <section class="metrics" id="metrics" aria-label="Live platform metrics">
+      <div class="metrics__grid">
+        <article class="metric">
+          <span class="metric__value" data-counter="rps">0</span>
+          <span class="metric__label">requests / second, live</span>
+        </article>
+        <article class="metric">
+          <span class="metric__value" data-counter="p99">0</span>
+          <span class="metric__label">ms p99 · global</span>
+        </article>
+        <article class="metric">
+          <span class="metric__value" data-counter="edge">0</span>
+          <span class="metric__label">edge nodes active</span>
+        </article>
+        <article class="metric">
+          <span class="metric__value" data-counter="gpu">0</span>
+          <span class="metric__label">% fleet GPU utilization</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░ Platform / features ░░ -->
+    <section class="platform" id="platform">
+      <header class="section-head" data-reveal>
+        <p class="section-head__kicker">The platform</p>
+        <h2 class="section-head__title">Everything between your code<br />and the planet.</h2>
+      </header>
+
+      <div class="features">
+        <article class="feature" data-tilt data-reveal>
+          <div class="feature__glyph">◇</div>
+          <h3>AI-native compute</h3>
+          <p>Schedule GPUs and CPUs from the same manifest. Models cold-start in
+             under 200ms with weight-streaming across the mesh.</p>
+          <ul><li>H100 · L40S · inferentia</li><li>Weight-aware placement</li></ul>
+        </article>
+        <article class="feature" data-tilt data-reveal>
+          <div class="feature__glyph">⬡</div>
+          <h3>Global edge mesh</h3>
+          <p>One deploy lands in every region simultaneously. Anycast routing puts
+             requests on the nearest healthy node — automatically.</p>
+          <ul><li>12 regions, 3,200+ nodes</li><li>Self-healing failover</li></ul>
+        </article>
+        <article class="feature" data-tilt data-reveal>
+          <div class="feature__glyph">↯</div>
+          <h3>Scale from zero</h3>
+          <p>Idle costs nothing. Traffic spikes scale to thousands of instances in
+             the time it takes to read this sentence.</p>
+          <ul><li>Sub-second autoscale</li><li>Scale-to-zero billing</li></ul>
+        </article>
+        <article class="feature" data-tilt data-reveal>
+          <div class="feature__glyph">◉</div>
+          <h3>Real-time observability</h3>
+          <p>Traces, metrics and logs streamed to you live — the same WebSocket
+             firehose powering the numbers on this page.</p>
+          <ul><li>1s resolution</li><li>No agents to install</li></ul>
+        </article>
+        <article class="feature" data-tilt data-reveal>
+          <div class="feature__glyph">⬢</div>
+          <h3>Zero-trust by default</h3>
+          <p>mTLS between every service, hardware-isolated tenants and signed
+             supply chains — on from the first request.</p>
+          <ul><li>Confidential compute</li><li>SOC 2 · ISO 27001</li></ul>
+        </article>
+        <article class="feature" data-tilt data-reveal>
+          <div class="feature__glyph">⟁</div>
+          <h3>Zero-ops runtime</h3>
+          <p>No clusters to patch, no capacity to plan. ORI is the control
+             plane; you just ship code.</p>
+          <ul><li>Git-push to global</li><li>Instant rollbacks</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░ Network / globe ░░ -->
+    <section class="network" id="network">
+      <div class="network__copy" data-reveal>
+        <p class="section-head__kicker">The network</p>
+        <h2 class="section-head__title">A planet-scale<br />nervous system.</h2>
+        <p class="network__lead">Every point of presence is live below. Hover a
+           region to trace its path — this is the same topology your traffic flows
+           across.</p>
+        <ul class="region-list" data-region-list></ul>
+      </div>
+      <div class="network__visual">
+        <canvas data-globe-detail aria-hidden="true"></canvas>
+        <div class="network__readout" data-region-readout>
+          <span class="network__readout-code">GLOBAL</span>
+          <span class="network__readout-name">All regions operational</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ Deploy / terminal ░░ -->
+    <section class="deploy" id="deploy">
+      <header class="section-head section-head--center" data-reveal>
+        <p class="section-head__kicker">The developer experience</p>
+        <h2 class="section-head__title">From <code>git push</code> to global<br />in one command.</h2>
+      </header>
+
+      <div class="terminal" data-terminal data-reveal>
+        <div class="terminal__bar">
+          <span class="terminal__dot"></span>
+          <span class="terminal__dot"></span>
+          <span class="terminal__dot"></span>
+          <span class="terminal__title">zsh — ori deploy</span>
+        </div>
+        <pre class="terminal__body" data-terminal-body></pre>
+      </div>
+    </section>
+
+    <!-- ░░ Pricing calculator ░░ -->
+    <section class="pricing" id="pricing">
+      <header class="section-head" data-reveal>
+        <p class="section-head__kicker">Pricing</p>
+        <h2 class="section-head__title">Pay for requests,<br />not for idle.</h2>
+        <p class="network__lead">Drag the sliders. The estimate updates in real
+           time — and ORI costs a fraction of the hyperscalers at the edge.</p>
+      </header>
+
+      <div class="calc" data-calc data-reveal>
+        <div class="calc__controls">
+          <label class="calc__field">
+            <span>Requests / month <b data-calc-out="requests">50M</b></span>
+            <input type="range" data-calc-input="requests" min="1" max="1000" value="50" step="1" />
+          </label>
+          <label class="calc__field">
+            <span>Avg compute / request <b data-calc-out="cpu">40ms</b></span>
+            <input type="range" data-calc-input="cpu" min="5" max="500" value="40" step="5" />
+          </label>
+          <label class="calc__field">
+            <span>GPU inference share <b data-calc-out="gpu">20%</b></span>
+            <input type="range" data-calc-input="gpu" min="0" max="100" value="20" step="1" />
+          </label>
+          <label class="calc__field">
+            <span>Egress / month <b data-calc-out="egress">5TB</b></span>
+            <input type="range" data-calc-input="egress" min="0" max="200" value="5" step="1" />
+          </label>
+        </div>
+        <div class="calc__result">
+          <p class="calc__result-kicker">Estimated monthly</p>
+          <p class="calc__result-value"><span data-calc-total>$0</span></p>
+          <p class="calc__result-vs" data-calc-vs>— vs. hyperscaler</p>
+          <div class="calc__bars">
+            <div class="calc__bar"><span>ORI</span><i data-calc-bar="ori"></i></div>
+            <div class="calc__bar calc__bar--muted"><span>Hyperscaler</span><i data-calc-bar="legacy"></i></div>
+          </div>
+          <a class="btn btn--primary btn--block" href="#waitlist" data-magnetic data-sfx="confirm">Start free →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ Testimonials ░░ -->
+    <section class="quotes" id="quotes" aria-label="What teams say">
+      <div class="quotes__track" data-quotes></div>
+    </section>
+
+    <!-- ░░ Waitlist CTA ░░ -->
+    <section class="waitlist" id="waitlist">
+      <canvas class="waitlist__fx" data-confetti aria-hidden="true"></canvas>
+      <div class="waitlist__inner" data-reveal>
+        <h2 class="waitlist__title">Ship on the edge.<br />Request early access.</h2>
+        <p class="waitlist__sub">
+          Join <b data-waitlist-count>—</b> teams already in the queue.
+        </p>
+        <form class="waitlist__form" data-waitlist novalidate>
+          <div class="waitlist__row">
+            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+            <button class="btn btn--primary" type="submit" data-sfx="confirm">
+              <span data-submit-label>Request access</span>
+            </button>
+          </div>
+          <div class="waitlist__row waitlist__row--meta">
+            <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization" />
+            <select name="region" aria-label="Preferred region">
+              <option value="">Nearest region</option>
+            </select>
+          </div>
+          <p class="waitlist__msg" data-waitlist-msg role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ░░ Footer ░░ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><polygon points="16,3 29,27 3,27" /></svg>
+        <span>ORI</span>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><h4>Platform</h4><a href="#platform">Compute</a><a href="#network">Edge network</a><a href="#deploy">CLI</a></div>
+        <div><h4>Company</h4><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a></div>
+        <div><h4>Resources</h4><a href="#">Docs</a><a href="#">Status</a><a href="#">Changelog</a></div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__status"><i class="pulse pulse--green"></i> All systems operational</span>
+      <span>© 2026 ORI — a zero-dependency demo. Built with WebGL, Web Audio &amp; a hand-rolled WebSocket stack.</span>
+    </div>
+  </footer>
+
+  <!-- entry module -->
+  <script type="module" src="/scripts/main.mjs"></script>
+</body>
+</html>

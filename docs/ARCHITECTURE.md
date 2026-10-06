@@ -1,4 +1,4 @@
-# ORI — architecture notes
+# STRATOS — architecture notes
 
 A tour of the non-obvious parts. The guiding constraint throughout: **ship no
 npm dependencies** and **no build step**, while still behaving like a real

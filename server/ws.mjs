@@ -1,4 +1,4 @@
-// ORI — hand-rolled WebSocket server (RFC 6455), zero dependencies.
+// STRATOS — hand-rolled WebSocket server (RFC 6455), zero dependencies.
 //
 // Why from scratch? It's the clearest way to show the "efficient use of
 // user connections" the brief asked for:

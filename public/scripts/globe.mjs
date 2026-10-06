@@ -1,4 +1,4 @@
-// ORI — WebGL globe.
+// STRATOS — WebGL globe.
 // Builds a stylized dot-grid planet with a fresnel atmosphere, glowing region
 // nodes, and animated data arcs with travelling pulses. Shares one render loop
 // per instance; pauses when offscreen. Custom GLSL is fetched from /shaders.

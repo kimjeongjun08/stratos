@@ -1,6 +1,6 @@
 <div align="center">
 
-# ▲ ORI
+# ▲ STRATOS
 
 ### The cloud that thinks at the edge.
 
@@ -16,7 +16,7 @@ WebGL · Web Audio · hand-rolled WebSockets · built-in SQLite · scroll cinema
 
 ## Why this exists
 
-Most landing pages stop at HTML + CSS. ORI goes the distance: a real-time
+Most landing pages stop at HTML + CSS. STRATOS goes the distance: a real-time
 backend, a WebGL planet, a procedural-audio engine, and a scroll-driven
 narrative — all wired together and all runnable from a single `node` command.
 
@@ -47,7 +47,7 @@ npm start
 ```
 
 That's it. No `npm install`. The SQLite database is created and seeded on
-first boot at `server/data/ori.db`.
+first boot at `server/data/stratos.db`.
 
 ```bash
 npm run dev        # same, with --watch hot reload
@@ -69,7 +69,7 @@ npm run db:reset   # drop all tables (re-seeded on next start)
 ## Project structure
 
 ```
-ori/
+stratos/
 ├── server/                 # zero-dependency Node backend
 │   ├── index.mjs           #   http + static + upgrade routing + telemetry loop
 │   ├── ws.mjs              #   hand-rolled WebSocket hub (RFC 6455)
@@ -110,5 +110,5 @@ WebSocket framing, the telemetry fan-out, and the globe shader.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). ORI is a fictional company; all metrics,
+MIT — see [LICENSE](LICENSE). STRATOS is a fictional company; all metrics,
 logos and testimonials are illustrative.

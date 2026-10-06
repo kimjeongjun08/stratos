@@ -1,4 +1,4 @@
-// ORI globe — fragment shader
+// STRATOS globe — fragment shader
 // A stylized "nervous system" planet: a latitude/longitude dot grid that
 // fades toward the limb, lit by a travelling terminator sweep, wrapped in a
 // fresnel rim in the brand gradient.

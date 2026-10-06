@@ -1,4 +1,4 @@
--- ORI persistence layer — schema
+-- STRATOS persistence layer — schema
 -- Applied idempotently on server boot by db.mjs.
 -- Uses WAL for concurrent read performance under many live connections.
 

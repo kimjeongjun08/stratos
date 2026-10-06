@@ -1,4 +1,4 @@
-// ORI — application entry point.
+// STRATOS — application entry point.
 // Orchestrates the preloader, custom cursor, navigation, live counters,
 // presence, globe, terminal, pricing, quotes, and the waitlist flow.
 

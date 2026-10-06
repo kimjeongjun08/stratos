@@ -1,9 +1,9 @@
-// ORI — scripted terminal demo.
-// Types out a realistic `ori deploy` session with colored output, then
+// STRATOS — scripted terminal demo.
+// Types out a realistic `stratos deploy` session with colored output, then
 // loops. Starts when scrolled into view; respects reduced-motion.
 
 const SCRIPT = [
-  { t: 'cmd', text: '$ ori deploy', after: 400 },
+  { t: 'cmd', text: '$ stratos deploy', after: 400 },
   { t: 'dim', text: '→ detecting project… Node 22 · 3 functions · 1 static site', after: 350 },
   { t: 'cyan', text: '→ building image  [████████████████████]  2.1s', after: 500 },
   { t: 'dim', text: '→ streaming weights to edge cache (1.2 GB)…', after: 450 },
@@ -12,7 +12,7 @@ const SCRIPT = [
   { t: 'ok', text: '  ✓ syd  ✓ gru  ✓ bom  ✓ cpt  ✓ icn  ✓ yyz', after: 450 },
   { t: 'dim', text: '→ running health checks · mTLS handshake · anycast warm-up', after: 500 },
   { t: 'violet', text: '→ promoting to production with instant rollback armed', after: 500 },
-  { t: 'ok', text: '✓ live in 4.8s — https://acme.ori.app', after: 700 },
+  { t: 'ok', text: '✓ live in 4.8s — https://acme.stratos.app', after: 700 },
   { t: 'dim', text: '  p99 11ms · cold-start 184ms · 0 ops required', after: 1600 },
 ];
 

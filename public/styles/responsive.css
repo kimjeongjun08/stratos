@@ -1,4 +1,4 @@
-/* ORI — responsive + touch adaptations */
+/* STRATOS — responsive + touch adaptations */
 
 @media (max-width: 1024px) {
   .features { grid-template-columns: repeat(2, 1fr); }

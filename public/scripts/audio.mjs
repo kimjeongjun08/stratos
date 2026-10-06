@@ -1,4 +1,4 @@
-// ORI — procedural audio engine.
+// STRATOS — procedural audio engine.
 // Every sound is synthesized at runtime with the Web Audio API, so the repo
 // ships no binary audio files. An ambient pad plays when enabled; UI gestures
 // trigger short synthesized cues. Audio only starts after a user gesture, per

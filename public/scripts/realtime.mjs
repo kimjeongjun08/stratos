@@ -1,4 +1,4 @@
-// ORI — realtime client.
+// STRATOS — realtime client.
 // Connects to the hand-rolled WebSocket hub for live metrics + presence.
 // If no backend is reachable (e.g. served statically on GitHub Pages), it
 // transparently falls back to a local simulator so the page stays alive.

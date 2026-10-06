@@ -1,4 +1,4 @@
-// ORI — persistence layer
+// STRATOS — persistence layer
 // Thin, synchronous wrapper around the built-in node:sqlite driver.
 // Zero npm dependencies. WAL mode keeps reads fast while the live
 // metrics writer appends in the background.
@@ -8,7 +8,7 @@ import { readFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const HERE = import.meta.dirname;
-const DB_PATH = resolve(HERE, process.env.DB_PATH ?? 'data/ori.db');
+const DB_PATH = resolve(HERE, process.env.DB_PATH ?? 'data/stratos.db');
 
 // Ensure the data directory exists before the driver opens the file.
 mkdirSync(dirname(DB_PATH), { recursive: true });

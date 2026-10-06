@@ -1,8 +1,8 @@
 {
-  "name": "ori-cloud",
+  "name": "stratos-cloud",
   "version": "1.0.0",
   "private": true,
-  "description": "ORI — the AI-native global edge cloud. A zero-dependency full-stack showcase: hand-rolled WebSocket server, built-in SQLite, WebGL globe, procedural audio.",
+  "description": "STRATOS — the AI-native global edge cloud. A zero-dependency full-stack showcase: hand-rolled WebSocket server, built-in SQLite, WebGL globe, procedural audio.",
   "type": "module",
   "engines": {
     "node": ">=22.5.0"
@@ -21,6 +21,6 @@
     "zero-dependency",
     "landing-page"
   ],
-  "author": "ORI",
+  "author": "STRATOS",
   "license": "MIT"
 }

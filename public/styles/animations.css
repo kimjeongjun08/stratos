@@ -1,4 +1,4 @@
-/* ORI — keyframes & reveal states */
+/* STRATOS — keyframes & reveal states */
 
 @keyframes pulse {
   0%   { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 70%, transparent); }

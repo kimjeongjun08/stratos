@@ -1,4 +1,4 @@
-// ORI globe — atmosphere glow (rendered on a slightly larger back-side sphere)
+// STRATOS globe — atmosphere glow (rendered on a slightly larger back-side sphere)
 precision highp float;
 
 varying vec3 vNormal;

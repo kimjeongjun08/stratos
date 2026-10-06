@@ -1,4 +1,4 @@
-// ORI — entry point.
+// STRATOS — entry point.
 // A single Node process that serves the static site, a small JSON API,
 // and a hand-rolled WebSocket hub that streams live telemetry.
 //
@@ -162,10 +162,10 @@ hub.onMessage((client, msg) => {
 // Boot + graceful shutdown
 // ---------------------------------------------------------------------------
 server.listen(PORT, HOST, () => {
-  console.log(`\n  ▲ ORI control plane online`);
+  console.log(`\n  ▲ STRATOS control plane online`);
   console.log(`  ├─ http      http://localhost:${PORT}`);
   console.log(`  ├─ websocket ws://localhost:${PORT}/ws`);
-  console.log(`  ├─ sqlite    ${process.env.DB_PATH ?? 'data/ori.db'}`);
+  console.log(`  ├─ sqlite    ${process.env.DB_PATH ?? 'data/stratos.db'}`);
   console.log(`  └─ deps      0 (http · crypto · node:sqlite)\n`);
 });
 

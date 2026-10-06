@@ -1,7 +1,7 @@
-// ORI — minimal offline-first service worker.
+// STRATOS — minimal offline-first service worker.
 // Caches the static shell; always lets API + WebSocket traffic hit the network.
 
-const CACHE = 'ori-v1';
+const CACHE = 'stratos-v1';
 const SHELL = [
   '/',
   '/index.html',

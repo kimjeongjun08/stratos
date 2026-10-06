@@ -1,4 +1,4 @@
-// ORI — REST API handlers.
+// STRATOS — REST API handlers.
 // Small, dependency-free JSON endpoints backed by SQLite.
 
 import { createHash } from 'node:crypto';

@@ -1,4 +1,4 @@
-// ORI — interactive pricing calculator.
+// STRATOS — interactive pricing calculator.
 // Reads unit economics from /data/pricing.json, recomputes on every slider
 // move, and animates the headline figure + comparison bars.
 
@@ -29,7 +29,7 @@ export async function initPricing(root) {
   };
   const totalEl = root.querySelector('[data-calc-total]');
   const vsEl = root.querySelector('[data-calc-vs]');
-  const barOri = root.querySelector('[data-calc-bar="ori"]');
+  const barStratos = root.querySelector('[data-calc-bar="stratos"]');
   const barLegacy = root.querySelector('[data-calc-bar="legacy"]');
 
   let displayed = 0;
@@ -57,7 +57,7 @@ export async function initPricing(root) {
     vsEl.textContent = `Save ~${savedPct}% vs. a provisioned hyperscaler`;
 
     const max = Math.max(total, legacy);
-    barOri.style.width = (total / max * 100) + '%';
+    barStratos.style.width = (total / max * 100) + '%';
     barLegacy.style.width = (legacy / max * 100) + '%';
 
     animateTo(total);

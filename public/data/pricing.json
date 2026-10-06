@@ -8,5 +8,5 @@
     "basePlatform": 0
   },
   "legacyMultiplier": 2.9,
-  "notes": "Illustrative pricing for the demo. ORI bills per-request with scale-to-zero; the legacy comparison models a provisioned hyperscaler footprint."
+  "notes": "Illustrative pricing for the demo. STRATOS bills per-request with scale-to-zero; the legacy comparison models a provisioned hyperscaler footprint."
 }

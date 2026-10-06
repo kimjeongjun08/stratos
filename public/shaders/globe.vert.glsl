@@ -1,4 +1,4 @@
-// ORI globe — vertex shader
+// STRATOS globe — vertex shader
 // Passes world-space normal, view direction and spherical coords to the
 // fragment stage for the fresnel rim + lat/long dot-grid effect.
 

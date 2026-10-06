@@ -1,4 +1,4 @@
-// ORI — scroll & micro-interaction layer.
+// STRATOS — scroll & micro-interaction layer.
 // IntersectionObserver drives the core reveals (works with zero deps); GSAP +
 // ScrollTrigger, loaded from CDN, layer on parallax and the horizontal quote
 // rail. Everything degrades gracefully if GSAP or motion is unavailable.

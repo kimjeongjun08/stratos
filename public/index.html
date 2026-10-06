@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="styles/animations.css" />
   <link rel="stylesheet" href="styles/responsive.css" />
 
+  <!-- Runtime config: set backendUrl here to make live data 100% real -->
+  <script src="config.js"></script>
+
   <!-- Three.js + GSAP via ESM import map (no build step) -->
   <script type="importmap">
   {
@@ -340,9 +343,21 @@
         <span>STRATOS</span>
       </div>
       <nav class="footer__cols" aria-label="Footer">
-        <div><h4>Platform</h4><a href="#platform">Compute</a><a href="#network">Edge network</a><a href="#deploy">CLI</a></div>
-        <div><h4>Company</h4><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a></div>
-        <div><h4>Resources</h4><a href="#">Docs</a><a href="#">Status</a><a href="#">Changelog</a></div>
+        <div><h4>Platform</h4>
+          <a href="#platform">Compute</a>
+          <a href="#network">Edge network</a>
+          <a href="#deploy">CLI</a>
+        </div>
+        <div><h4>Company</h4>
+          <a href="#hero">About</a>
+          <a href="https://github.com/kimjeongjun08/stratos" target="_blank" rel="noopener noreferrer">Careers&nbsp;↗</a>
+          <a href="https://github.com/kimjeongjun08/stratos" target="_blank" rel="noopener noreferrer">Blog&nbsp;↗</a>
+        </div>
+        <div><h4>Resources</h4>
+          <a href="https://github.com/kimjeongjun08/stratos/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Docs&nbsp;↗</a>
+          <a href="#metrics">Status</a>
+          <a href="https://github.com/kimjeongjun08/stratos/commits/main" target="_blank" rel="noopener noreferrer">Changelog&nbsp;↗</a>
+        </div>
       </nav>
     </div>
     <div class="footer__bottom">

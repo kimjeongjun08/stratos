@@ -22,7 +22,7 @@ body::after {
   opacity: 0.5;
 }
 
-.section-head { max-width: 46ch; margin-bottom: clamp(2rem, 5vw, 4rem); }
+.section-head { max-width: 46ch; margin-bottom: clamp(1.4rem, 3.5vw, 2.6rem); }
 .section-head--center { margin-inline: auto; text-align: center; }
 .section-head__kicker {
   font-family: var(--font-mono); font-size: var(--step--1);
@@ -32,7 +32,7 @@ body::after {
 .section-head__title { font-family: var(--font-display); font-size: var(--step-2); letter-spacing: -0.02em; }
 .section-head__title code { font-family: var(--font-mono); font-size: 0.8em; background: var(--surface); padding: 0.05em 0.3em; border-radius: 8px; border: 1px solid var(--line); }
 
-section { padding-block: clamp(4rem, 10vw, 9rem); padding-inline: var(--gutter); }
+section { padding-block: clamp(2.6rem, 6vw, 5rem); padding-inline: var(--gutter); }
 
 /* ░░ buttons ░░ */
 .btn {
@@ -112,7 +112,7 @@ section { padding-block: clamp(4rem, 10vw, 9rem); padding-inline: var(--gutter);
 .sound-toggle[aria-pressed="true"] .sound-toggle__bars i:nth-child(4) { animation-delay: 0.1s; }
 
 /* ░░ Hero ░░ */
-.hero { position: relative; min-height: 100svh; display: grid; align-items: center; padding-top: 6rem; overflow: hidden; }
+.hero { position: relative; min-height: 88svh; display: grid; align-items: center; padding-top: 5rem; overflow: hidden; }
 .hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .hero__grid { position: absolute; inset: 0; z-index: 0; background: linear-gradient(transparent 0, var(--bg) 92%); pointer-events: none; }
 .hero__inner { position: relative; z-index: 2; max-width: var(--maxw); margin-inline: auto; width: 100%; }

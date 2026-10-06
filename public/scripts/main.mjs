@@ -8,6 +8,7 @@ import { createGlobe } from './globe.mjs';
 import { initTerminal } from './terminal.mjs';
 import { initPricing } from './pricing.mjs';
 import { initReveals, initMagnetic, initTilt, initGsap } from './scroll.mjs';
+import { apiUrl } from './config.mjs';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -153,8 +154,19 @@ function initCounters() {
 // ───────────────────────── Presence + remote cursors ─────────────────────────
 function initPresence() {
   const countEl = $('[data-live-count]');
+  const pill = $('[data-live-pill]');
   realtime.addEventListener('presence', (e) => {
     if (countEl) countEl.textContent = e.detail.count;
+  });
+  // reflect whether the count is real (WebSocket) or simulated
+  realtime.addEventListener('status', (e) => {
+    const live = e.detail.mode === 'live';
+    if (pill) {
+      pill.dataset.mode = e.detail.mode;
+      pill.title = live
+        ? 'Real visitors connected right now (live WebSocket)'
+        : 'Simulated — deploy the backend and set backendUrl in config.js for real presence';
+    }
   });
 
   const layer = $('#remote-cursors');
@@ -177,7 +189,7 @@ function initPresence() {
 async function initGlobes() {
   let regions = [];
   try {
-    regions = (await fetch('api/regions').then((r) => r.json())).regions;
+    regions = (await fetch(apiUrl('api/regions')).then((r) => r.json())).regions;
   } catch {
     try { regions = (await fetch('data/regions.json').then((r) => r.json())).regions; } catch { regions = []; }
   }
@@ -260,7 +272,7 @@ function initWaitlist() {
   const submitLabel = $('[data-submit-label]');
 
   // seed count from /api/stats
-  fetch('api/stats').then((r) => r.json()).then((s) => {
+  fetch(apiUrl('api/stats')).then((r) => r.json()).then((s) => {
     if (countEl) countEl.textContent = nf.format(s.waitlist ?? 0);
   }).catch(() => { if (countEl) countEl.textContent = '2,800+'; });
 
@@ -278,7 +290,7 @@ function initWaitlist() {
     }
     if (submitLabel) submitLabel.textContent = 'Joining…';
     try {
-      const res = await fetch('api/waitlist', {
+      const res = await fetch(apiUrl('api/waitlist'), {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ email: data.email, company: data.company, region: data.region }),

@@ -86,6 +86,14 @@ const server = createServer(async (req, res) => {
   // basic hardening headers
   res.setHeader('referrer-policy', 'strict-origin-when-cross-origin');
 
+  // CORS: allow the static frontend (e.g. GitHub Pages) to reach this API
+  // cross-origin so live metrics / presence / waitlist work from anywhere.
+  res.setHeader('access-control-allow-origin', '*');
+  res.setHeader('access-control-allow-methods', 'GET, POST, OPTIONS');
+  res.setHeader('access-control-allow-headers', 'content-type');
+  res.setHeader('access-control-max-age', '86400');
+  if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
+
   if (url.pathname.startsWith('/api/')) {
     try {
       const handled = await handleApi(req, res, url, hub);
